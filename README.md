@@ -2,7 +2,7 @@
 
 ## Group Members - Group 4
 - [Tobias Allers](https://github.com/tka29934/project_1_4610/tree/main)
-- [Luke Mabry] (https://github.com/Luke111033)
+- [Luke Mabry](https://github.com/Luke111033)
 - [Alicia Lim] ()
 - [Chris Sierra] ()
 - [Pranav Rohit] ()
