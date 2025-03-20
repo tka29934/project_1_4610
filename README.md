@@ -4,7 +4,7 @@
 - [Tobias Allers](https://github.com/tka29934)
 - [Luke Mabry](https://github.com/Luke111033)
 - [Alicia Lim] ()
-- [Chris Sierra] ()
+- [Chris Sierra](https://github.com/Chrissi3rraa)
 - [Pranav Rohit](https://github.com/pra984-star)
 
 ## Project Scenario and Overview
