@@ -30,7 +30,7 @@ We were given the task of creating a new, high level for the NBA. They wanted da
 
 ## Queries
 
-## Query 1 and Description
+## Query 1
 
 SELECT s.seasonYear, s.seasonWinner
 FROM Seasons s
@@ -43,7 +43,7 @@ WHERE EXISTS (
 
 ## Description: Gives Team Name and seasonYear of teams who are seasonWinners and were formed before 1980 and also have less than 10000000 fans. (Shows significant smaller market teams who have been good recently, could be used to bump up league revenue distributed to these teams due to tenure in league and success level).
 
-## Query 2 and Description
+## Query 2
 
 SELECT e.execID, e.firstName, e.lastName
 FROM Executives e
@@ -56,7 +56,7 @@ WHERE EXISTS (
 
 ## Description: Displays execID, firstName, and lastName of Executives that work for teams which are located in cities with a population of 800,000 or more. The reason for this query is because if you are a player’s agent (person who tries to find a player a contract on a team) and are trying to find a large market team for your player to play for, you would want to contact one of these executives. 
 
-## Query 3 and Description
+## Query 3
  
 Select specialty, Coaches.firstName, Coaches.lastName, Coaches.teamSigned
 From Coaches
@@ -67,7 +67,7 @@ Order By specialty, Coaches.lastName;
 ## Description: This query identifies the coaches that have similar specialties and what team they coach for. This is important for executives choosing a specific coach that they believe will be beneficial to the team and to be a better fit for a manager. From a ownership perspective, understanding which position the coach is in, and how successful their team has been under their tenure in their specialty will help to narrow down the options for a new coach for that specialty. 
 
 
-## Query 4 and Description
+## Query 4
 
  Select Teams.teamName, Players.firstName, Players.lastName, Players.yearsPlayed
  From Teams
@@ -80,7 +80,7 @@ Order By specialty, Coaches.lastName;
 
 
 
-## Query 5 and Description
+## Query 5
 
 USE al_cas20361;
 SELECT Teams.teamName, Teams.numFans, 
@@ -101,7 +101,7 @@ ORDER BY fanEngagementRate ASC;
 
 
 
-## Query 6 and Description
+## Query 6
 
 USE al_cas20361;
 SELECT Sponsors.companyName,Sponsors.netWorth,COUNT(`Brand Deals`.teamName) AS totalDeals
@@ -123,7 +123,7 @@ ORDER BY totalDeals DESC;
 
 
 
-## Query 7 and Description
+## Query 7
 
 SELECT teamName, numFans
 FROM Teams
@@ -131,7 +131,7 @@ WHERE numFans > 5000000;
 
 ## Description: This query identifies teams with a large fan base, which is useful for understanding market size and fan engagement potential. Managers can use this data for strategic decisions, such as expanding merchandise distribution, planning fan engagement events, and negotiating sponsorship deals. Managers would care about this query because teams with larger fan bases represent greater revenue opportunities through merchandise, ticket sales, and sponsorships. Identifying these teams allows for targeted marketing and resource allocation.
 
-## Query 8 and Description
+## Query 8
 
 SELECT c.cityName, SUM(v.capacity) AS total_capacity, COUNT(v.venueID) AS venue_count FROM 
 Cities c
@@ -141,11 +141,23 @@ HAVING COUNT(v.venueID) > 1 AND SUM(v.capacity) > 40000;
 
 ## Description: This query identifies cities that host multiple venues with a large total seating capacity. This information is important for venue management and city planning, helping managers decide where to host large events or allocate resources to improve infrastructure. From a managerial perspective, understanding which cities have large total seating capacities across multiple venues helps in event scheduling, resource allocation, and market analysis. It can also support negotiations with event organizers and sponsors.
 
-## Query 9 and Description
+## Query 9
+
+select seasonPlayed, (ticketsSold / capacity) as "percentFilled"
+from Venues v
+join Games g
+on venueID = venuePlayed
+where (ticketsSold / capacity) < 1.0
+order by seasonPlayed asc;
+
 
 
 ## Query 10 and Description
 
-
+select firstName, lastName, specialty, teamSigned, count(playerAssigned)
+from Coaches
+join `Coach Player Pairings`
+on coachID = coachAssigned
+group by coachID;
 
 
