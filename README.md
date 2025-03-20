@@ -2,10 +2,10 @@
 
 ## Group Members - Group 4
 - [Tobias Allers](https://github.com/tka29934/project_1_4610/tree/main)
-- [Luke Mabry]
-- [Alicia Lim]
-- [Chris Sierra]
-- [Pranav Rohit]
+- [Luke Mabry] (https://github.com/Luke111033)
+- [Alicia Lim] ()
+- [Chris Sierra] ()
+- [Pranav Rohit] ()
 
 ## Project Scenario and Overview
 We were given the task of creating a new, high level for the NBA. They wanted database that could give an overview of their franchise. We built the data model with Teams being the central entity, and most other entities, such as executives on the team board, brand sponsorships, and coaches and players stemming from this primary entity. We were charged with building a data model to visualize the database, populate the database with data relevant to the NBA, and write queries to prove the efficacy of the database built.
