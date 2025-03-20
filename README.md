@@ -41,10 +41,20 @@ WHERE EXISTS (
     AND t.dateFormed < '1980-01-01'
     AND t.numFans < 10000000);
 
-### Description: Gives Team Name and seasonYear of teams who are seasonWinners and were formed before 1980 and also have less than 10000000 fans. (Shows significant smaller market teams who have been good recently, could be used to bump up league revenue distributed to these teams due to tenure in league and success level).
+## Description: Gives Team Name and seasonYear of teams who are seasonWinners and were formed before 1980 and also have less than 10000000 fans. (Shows significant smaller market teams who have been good recently, could be used to bump up league revenue distributed to these teams due to tenure in league and success level).
 
 ## Query 2 and Description
 
+SELECT e.execID, e.firstName, e.lastName
+FROM Executives e
+WHERE EXISTS (
+    SELECT 1
+    FROM Teams t
+    JOIN Cities c ON t.homeCity = c.cityID
+    WHERE e.teamWorkedFor = t.teamName
+    AND c.population > 800000  -- Try lowering the threshold);
+
+## Description: Displays execID, firstName, and lastName of Executives that work for teams which are located in cities with a population of 800,000 or more. The reason for this query is because if you are a player’s agent (person who tries to find a player a contract on a team) and are trying to find a large market team for your player to play for, you would want to contact one of these executives. 
 
 ## Query 3 and Description
 
