@@ -125,9 +125,21 @@ ORDER BY totalDeals DESC;
 
 ## Query 7 and Description
 
+SELECT teamName, numFans
+FROM Teams
+WHERE numFans > 5000000;
+
+## Description: This query identifies teams with a large fan base, which is useful for understanding market size and fan engagement potential. Managers can use this data for strategic decisions, such as expanding merchandise distribution, planning fan engagement events, and negotiating sponsorship deals. Managers would care about this query because teams with larger fan bases represent greater revenue opportunities through merchandise, ticket sales, and sponsorships. Identifying these teams allows for targeted marketing and resource allocation.
 
 ## Query 8 and Description
 
+SELECT c.cityName, SUM(v.capacity) AS total_capacity, COUNT(v.venueID) AS venue_count FROM 
+Cities c
+JOIN Venues v ON c.cityID = v.cityID
+GROUP BY c.cityName
+HAVING COUNT(v.venueID) > 1 AND SUM(v.capacity) > 40000;
+
+## Description: This query identifies cities that host multiple venues with a large total seating capacity. This information is important for venue management and city planning, helping managers decide where to host large events or allocate resources to improve infrastructure. From a managerial perspective, understanding which cities have large total seating capacities across multiple venues helps in event scheduling, resource allocation, and market analysis. It can also support negotiations with event organizers and sponsors.
 
 ## Query 9 and Description
 
