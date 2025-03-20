@@ -1,7 +1,7 @@
 # project_1_4610
 
 ## Group Members - Group 4
-- [Tobias Allers](https://github.com/tka29934/project_1_4610/tree/main)
+- [Tobias Allers](https://github.com/tka29934)
 - [Luke Mabry](https://github.com/Luke111033)
 - [Alicia Lim] ()
 - [Chris Sierra] ()
