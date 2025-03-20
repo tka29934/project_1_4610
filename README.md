@@ -2,7 +2,7 @@
 
 ## Group Members - Group 4
 - [Tobias Allers](https://github.com/tka29934)
-- [Luke Mabry](https://github.com/Luke111033)
+- [Luke Mabry](https://github.com/Luke111033/MIST4610-Project-1/blob/main/README.md)
 - [Alicia Lim](https://github.com/alicianlim)
 - [Chris Sierra](https://github.com/Chrissi3rraa)
 - [Pranav Rohit](https://github.com/pra984-star)
