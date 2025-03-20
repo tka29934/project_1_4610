@@ -82,8 +82,45 @@ Order By specialty, Coaches.lastName;
 
 ## Query 5 and Description
 
+USE al_cas20361;
+SELECT Teams.teamName, Teams.numFans, 
+    AVG(Games.ticketsSold) AS avgTicketsSold, 
+    (AVG(Games.ticketsSold) / Teams.numFans) * 100 AS fanEngagementRate,
+    (SELECT COUNT(*) 
+     FROM Games 
+     WHERE Games.teamWinner = Teams.teamName OR Games.teamLoser = Teams.teamName
+    ) AS totalGamesPlayed
+FROM Teams
+JOIN Games ON Teams.teamName = Games.teamWinner OR Teams.teamName = Games.teamLoser
+WHERE Teams.numFans > 0  
+GROUP BY Teams.teamName, Teams.numFans
+HAVING fanEngagementRate < 0.5
+ORDER BY fanEngagementRate ASC;
+
+## Description: This query identifies teams with low fan engagement by comparing the average number of tickets sold per game to their total fan base. It helps executives understand which teams struggle to convert their fan base into actual attendees. 
+
+
 
 ## Query 6 and Description
+
+USE al_cas20361;
+SELECT Sponsors.companyName,Sponsors.netWorth,COUNT(`Brand Deals`.teamName) AS totalDeals
+FROM Sponsors
+JOIN `BrandDeals` ON Sponsors.companyID = `Brand Deals`.companyID
+WHERE Sponsors.companyID IN (
+    SELECT companyID
+    FROM `Brand Deals`
+    GROUP BY companyID
+    HAVING COUNT(teamName) > (
+        SELECT AVG(dealCount)
+        FROM (SELECT companyID, COUNT(teamName) AS dealCount FROM `Brand Deals` GROUP BY companyID) AS avgDeals
+    )
+)
+GROUP BY Sponsors.companyName, Sponsors.netWorth
+ORDER BY totalDeals DESC;
+
+## Description: This query identifies the top sponsors based on the number of brand deals they have with teams. It filters out sponsors that have fewer than the average number of deals, ensuring the focus is on high-value sponsors. The subquery calculates the average number of deals per sponsor and excludes those below this threshold, allowing for a more meaningful analysis of sponsorship impact.
+
 
 
 ## Query 7 and Description
