@@ -8,7 +8,7 @@
 - [Pranav Rohit](https://github.com/pra984-star/GroupProject)
 
 ## Project Scenario and Overview
-We were given the task of creating a new, high level for the NBA. They wanted database that could give an overview of their franchise. We built the data model with Teams being the central entity, and most other entities, such as executives on the team board, brand sponsorships, and coaches and players stemming from this primary entity. We were charged with building a data model to visualize the database, populate the database with data relevant to the NBA, and write queries to prove the efficacy of the database built.
+We were given the task of creating a new, high level database for the NBA. They wanted database that could give an overview of their franchise. We built the data model with Teams being the central entity, and most other entities, such as executives on the team board, brand sponsorships, and coaches and players stemming from this primary entity. We were charged with building a data model to visualize the database, populate the database with data relevant to the NBA, and write queries to prove the efficacy of the database built.
 
 ## Data Model
 <img width="568" alt="MIST 4610 Project 1 Data Model" src="https://github.com/user-attachments/assets/39af895d-bcab-4eb2-b48f-310f4b6cb46b" />
@@ -59,14 +59,10 @@ This query identifies the coaches that have similar specialties and what team th
 
 ## Query 4
 
- Select Teams.teamName, Players.firstName, Players.lastName, Players.yearsPlayed
- From Teams
- Join Players ON Teams.teamName=Players.teamSigned
- Where Teams.teamName In (
-	Select teamSigned From Players Group By teamSigned Having Avg(yearsPlayed)>5)
-    Order By Players.yearsPlayed DESC;
+<img width="817" alt="Screenshot 2025-03-20 at 7 29 04 PM" src="https://github.com/user-attachments/assets/d2eab963-dade-4686-b8d9-3c92d01cd054" />
+<img width="404" alt="Screenshot 2025-03-20 at 7 29 30 PM" src="https://github.com/user-attachments/assets/2466e92f-4f64-4545-bf30-00de3a029fb3" />
 
-## Description: This helps to narrow down the experience of players by filtering through the amount of years played and ordering the number of players who have played over 5 years. This helps Executives to select a player that has some more experience and give them a shot of winning a championship with that team. 
+This helps to narrow down the experience of players by filtering through the amount of years played and ordering the number of players who have played over 5 years. This helps Executives to select a player that has some more experience and give them a shot of winning a championship with that team. 
 
 
 
