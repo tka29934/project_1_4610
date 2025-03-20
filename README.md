@@ -29,3 +29,46 @@ We were given the task of creating a new, high level for the NBA. They wanted da
 <img width="634" alt="Screenshot 2025-03-20 at 12 31 41 PM" src="https://github.com/user-attachments/assets/741881e7-66f6-4702-bfdc-ea26e5016dd5" />
 
 ## Queries
+
+## Query 1 and Description
+
+SELECT s.seasonYear, s.seasonWinner
+FROM Seasons s
+WHERE EXISTS (
+    SELECT 1
+    FROM Teams t
+    WHERE t.teamName = s.seasonWinner
+    AND t.dateFormed < '1980-01-01'
+    AND t.numFans < 10000000);
+
+## Description: Gives Team Name and seasonYear of teams who are seasonWinners and were formed before 1980 and also have less than 10000000 fans. (Shows significant smaller market teams who have been good recently, could be used to bump up league revenue distributed to these teams due to tenure in league and success level).
+
+## Query 2 and Description
+
+
+## Query 3 and Description
+
+
+## Query 4 and Description
+
+
+## Query 5 and Description
+
+
+## Query 6 and Description
+
+
+## Query 7 and Description
+
+
+## Query 8 and Description
+
+
+## Query 9 and Description
+
+
+## Query 10 and Description
+
+
+
+
