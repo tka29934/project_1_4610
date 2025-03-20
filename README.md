@@ -41,7 +41,7 @@ WHERE EXISTS (
     AND t.dateFormed < '1980-01-01'
     AND t.numFans < 10000000);
 
-# Description: Gives Team Name and seasonYear of teams who are seasonWinners and were formed before 1980 and also have less than 10000000 fans. (Shows significant smaller market teams who have been good recently, could be used to bump up league revenue distributed to these teams due to tenure in league and success level).
+### Description: Gives Team Name and seasonYear of teams who are seasonWinners and were formed before 1980 and also have less than 10000000 fans. (Shows significant smaller market teams who have been good recently, could be used to bump up league revenue distributed to these teams due to tenure in league and success level).
 
 ## Query 2 and Description
 
