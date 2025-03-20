@@ -57,9 +57,27 @@ WHERE EXISTS (
 ## Description: Displays execID, firstName, and lastName of Executives that work for teams which are located in cities with a population of 800,000 or more. The reason for this query is because if you are a player’s agent (person who tries to find a player a contract on a team) and are trying to find a large market team for your player to play for, you would want to contact one of these executives. 
 
 ## Query 3 and Description
+ 
+Select specialty, Coaches.firstName, Coaches.lastName, Coaches.teamSigned
+From Coaches
+Where specialty On (
+Select specialty From Coaches Group By specialty Having Count(*)>1)
+Order By specialty, Coaches.lastName;
+
+##Description: This query identifies the coaches that have similar specialties and what team they coach for. This is important for executives choosing a specific coach that they believe will be beneficial to the team and to be a better fit for a manager. From a ownership perspective, understanding which position the coach is in, and how successful their team has been under their tenure in their specialty will help to narrow down the options for a new coach for that specialty. 
 
 
 ## Query 4 and Description
+
+ Select Teams.teamName, Players.firstName, Players.lastName, Players.yearsPlayed
+ From Teams
+ Join Players ON Teams.teamName=Players.teamSigned
+ Where Teams.teamName  (
+	Select teamSigned From Players Group By teamSigned Having Avg(yearsPlayed)>5)
+    Order By Players.yearsPlayed DESC;
+
+##Description: This helps to narrow down the experience of players by filtering through the amount of years played and ordering the number of players who have played over 5 years. This helps Executives to select a player that has some more experience and give them a shot of winning a championship with that team. 
+
 
 
 ## Query 5 and Description
