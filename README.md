@@ -62,7 +62,7 @@ This query identifies the coaches that have similar specialties and what team th
  Select Teams.teamName, Players.firstName, Players.lastName, Players.yearsPlayed
  From Teams
  Join Players ON Teams.teamName=Players.teamSigned
- Where Teams.teamName  (
+ Where Teams.teamName In (
 	Select teamSigned From Players Group By teamSigned Having Avg(yearsPlayed)>5)
     Order By Players.yearsPlayed DESC;
 
