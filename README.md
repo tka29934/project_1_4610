@@ -64,7 +64,7 @@ Where specialty On (
 Select specialty From Coaches Group By specialty Having Count(*)>1)
 Order By specialty, Coaches.lastName;
 
-##Description: This query identifies the coaches that have similar specialties and what team they coach for. This is important for executives choosing a specific coach that they believe will be beneficial to the team and to be a better fit for a manager. From a ownership perspective, understanding which position the coach is in, and how successful their team has been under their tenure in their specialty will help to narrow down the options for a new coach for that specialty. 
+## Description: This query identifies the coaches that have similar specialties and what team they coach for. This is important for executives choosing a specific coach that they believe will be beneficial to the team and to be a better fit for a manager. From a ownership perspective, understanding which position the coach is in, and how successful their team has been under their tenure in their specialty will help to narrow down the options for a new coach for that specialty. 
 
 
 ## Query 4 and Description
@@ -76,7 +76,7 @@ Order By specialty, Coaches.lastName;
 	Select teamSigned From Players Group By teamSigned Having Avg(yearsPlayed)>5)
     Order By Players.yearsPlayed DESC;
 
-##Description: This helps to narrow down the experience of players by filtering through the amount of years played and ordering the number of players who have played over 5 years. This helps Executives to select a player that has some more experience and give them a shot of winning a championship with that team. 
+## Description: This helps to narrow down the experience of players by filtering through the amount of years played and ordering the number of players who have played over 5 years. This helps Executives to select a player that has some more experience and give them a shot of winning a championship with that team. 
 
 
 
