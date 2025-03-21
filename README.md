@@ -4,7 +4,7 @@
 - [Tobias Allers](https://github.com/tka29934/project_1_4610)
 - [Luke Mabry](https://github.com/Luke111033/MIST4610-Project-1/blob/main/README.md)
 - [Alicia Lim](https://github.com/alicianlim/Project-1-4610)
-- [Chris Sierra](https://github.com/Chrissi3rraa/4610-Project-1)
+- [Chris Sierra](https://github.com/Chrissi3rraa/4610-Project-1/blob/main/README.md)
 - [Pranav Rohit](https://github.com/pra984-star/GroupProject)
 
 ## Project Scenario and Overview
