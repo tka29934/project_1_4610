@@ -108,7 +108,7 @@ HAVING COUNT(v.venueID) > 1 AND SUM(v.capacity) > 40000;
 
 the goal of this query is to find and return games that did not sell out their venue. It gives the ratio of tickets sold to the total capacity of the venue the game was held in, as well as the year the game took place in. Executives would appreciate this data as it shows how frequently (or infrequently) games are able to sell to full capacity, as well as how close each game got to a fully packed arena. An interesting thing to take note of for the data is the fact that the games in 2020 return a "0 percent filled" cell; that is because, over Covid, real tickets were not sold for NBA games. Instead, virtual, free "tickets" were allowed for people to watch the game.
 
-## Query 10 and Description
+## Query 10
 
 <img width="581" alt="Screenshot 2025-03-20 at 6 39 27 PM" src="https://github.com/user-attachments/assets/f42a27f6-a337-4da6-a9be-e83c51ae0ac3" />
 <img width="444" alt="Screenshot 2025-03-20 at 6 39 57 PM" src="https://github.com/user-attachments/assets/94979c7f-2b87-49e6-997e-9490c19cda6e" />
