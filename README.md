@@ -33,7 +33,8 @@ We built a model that depicts different elements that would be stored by the NBA
 ## Queries
 
 ## Query Matrix
-<img width="680" alt="Screenshot 2025-03-20 at 6 59 24 PM" src="https://github.com/user-attachments/assets/1a12d712-2a3f-4e94-b8b2-4846235ba47d" />
+<img width="684" alt="Screenshot 2025-03-20 at 9 46 04 PM" src="https://github.com/user-attachments/assets/a144bfbf-a663-4649-bf3c-0e7afd12cf86" />
+
 
 ## Query 1
 
@@ -93,13 +94,10 @@ This query identifies teams with a large fan base, which is useful for understan
 
 ## Query 8
 
-SELECT c.cityName, SUM(v.capacity) AS total_capacity, COUNT(v.venueID) AS venue_count FROM 
-Cities c
-JOIN Venues v ON c.cityID = v.cityID
-GROUP BY c.cityName
-HAVING COUNT(v.venueID) > 1 AND SUM(v.capacity) > 40000;
+<img width="415" alt="Screenshot 2025-03-20 at 9 28 42 PM" src="https://github.com/user-attachments/assets/afceb693-98c7-42df-af0a-20ecd89d0aad" />
+<img width="275" alt="Screenshot 2025-03-20 at 9 29 00 PM" src="https://github.com/user-attachments/assets/373cc3b9-4e7e-445a-b285-0c0dcaf5e215" />
 
-## Description: This query identifies cities that host multiple venues with a large total seating capacity. This information is important for venue management and city planning, helping managers decide where to host large events or allocate resources to improve infrastructure. From a managerial perspective, understanding which cities have large total seating capacities across multiple venues helps in event scheduling, resource allocation, and market analysis. It can also support negotiations with event organizers and sponsors.
+The goal of this query is to show which venues have an above average capacity, as well as what state they're located in. It orders the venues by capacity from greatest to smallest. This is helpful for managers to know as it gives them an understanding of what the upper quanities of capacity look like; If these stadiums are routinely selling to max capacity executives could use this information to properly size any new stadiums. In addition, if there were any random national events to be hosted they could choose a locale with a higher capacity from this list.
 
 ## Query 9
 
